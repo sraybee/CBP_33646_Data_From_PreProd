@@ -1,0 +1,113 @@
+Cluster: tekton-preprod-us-east-1-gree, Namespace: event--3658e3f01cbdae2f84c6520be1bb0a1f7ad3cba8b6652b72e6e4bd4a, Steps: 140
+LogIn to AWS SSO with profile saas-pp-dev to access EKS clusters...
+Attempting to automatically open the SSO authorization page in your default browser.
+If the browser does not open or you wish to use a different device to authorize this request, open the following URL:
+
+https://d-90674cf71c.awsapps.com/start/#/device
+
+Then enter the code:
+
+MCPL-XJLK
+Successfully logged into Start URL: https://d-90674cf71c.awsapps.com/start/#
+
+Checking namespaces in EKS clusters (per-line):
+
+============================================================
+  Cluster   : tekton-preprod-us-east-1-gree
+  Namespace : event--3658e3f01cbdae2f84c6520be1bb0a1f7ad3cba8b6652b72e6e4bd4a
+============================================================
+  Status    : ALIVE
+============================================================
+
+------------------------------------------------------------
+  Core Resources
+------------------------------------------------------------
+NAME                                                              READY   STATUS      RESTARTS   AGE
+pods/dispatch-dispatch-pod 0/1 Completed 0 2m44s
+Size: 23780 bytes
+
+pods/run-gith9f67c15cdbd6aa2fb6a813cbf93934913e45d77969d1f426cde-pod 0/140 Pending 0 2m33s
+Size: 4514125 bytes
+
+
+NAME       SECRETS   AGE
+serviceaccounts/default 0 2m57s
+Size: 344 bytes
+
+serviceaccounts/dispatch 0 3m1s
+Size: 663 bytes
+
+
+NAME                                                              DATA   AGE
+configmaps/dispatch 1 3m7s
+Size: 10192 bytes
+
+configmaps/evt-github-com-3677c5c4-1948-11f1-8c6c-69efd09293a0-0b726fd13f0 1 3m
+Size: 10627 bytes
+
+configmaps/kube-root-ca.crt 1 3m16s
+Size: 1825 bytes
+
+configmaps/registries-github-com-3677c5c4-1948-11f1-8c6c-69efd-43c6fd15f0b 2 3m7s
+Size: 1723 bytes
+
+configmaps/run-githubcom-myworkflo-jobbuildf-config-898ac941ff750993 1 3m11s
+Size: 2602 bytes
+
+
+NAME                                                              TYPE                             DATA   AGE
+secrets/ds-evt-github-com-3677c5c4-1948-11f1-8c6c-69efd0929-fe2e16c7500 kubernetes.io/dockerconfigjson 1 3m18s
+Size: 977 bytes
+
+secrets/idtoken Opaque 1 3m33s
+Size: 3473 bytes
+
+secrets/idtoken-github-com-3677c5c4-1948-11f1-8c6c-69efd092-36903d4d7b9 Opaque 1 3m26s
+Size: 3693 bytes
+
+secrets/pridt-github-com-3677c5c4-1948-11f1-8c6c-69efd09293-15feb1aa6ce Opaque 1 3m29s
+Size: 3732 bytes
+
+secrets/regcreds kubernetes.io/dockerconfigjson 1 3m45s
+Size: 758 bytes
+
+secrets/run-githubcom3677-myworkflow-jobbuildf10ec3ffe-daaaac2d4933c6e3 Opaque 3 3m37s
+Size: 1068 bytes
+
+
+NAME                                   POD-SELECTOR                              AGE
+networkpolicies/egress-deny-all-but-internet-and-dns cloudbees.io/meta-pipeline notin (true) 3m57s
+Size: 2581 bytes
+
+
+------------------------------------------------------------
+  Tekton Resources
+------------------------------------------------------------
+NAME                                                              AGE
+tasks/job-build-82a7bb3660926890641c2d667dd6bfcc6cb8-e12e1a41ad1b6c79 3m52s
+Size: 157929 bytes
+
+
+NAME                                                              SUCCEEDED   REASON      STARTTIME   COMPLETIONTIME
+taskruns/dispatch-dispatch True Succeeded 4m12s 3m58s
+Size: 16079 bytes
+
+taskruns/run-gith9f67c15cdbd6aa2fb6ac227c6f2270f8-job-build-f10ec3ffef16 Unknown Pending 4m1s
+Size: 181666 bytes
+
+
+NAME                                                   SUCCEEDED   REASON      STARTTIME   COMPLETIONTIME
+pipelineruns/dispatch True Succeeded 4m24s 4m10s
+Size: 21096 bytes
+
+pipelineruns/run-githubcom3677c5c4194-myworkflow-bf103ebc20cd32e6 Unknown Running 4m15s
+Size: 10515 bytes
+
+
+
+============================================================
+  namespace_k8s_resources_total_size : 4969448 bytes  ( 4.7392 MB )  [Steps: 140]
+============================================================
+
+# Log
+# 2026 Mar 06 10:35:52 UTC | WARN | (/transformworkflow.go:814 in engine) | '[STEP_LIMIT_EXCEEDED] Job: build | Cluster: tekton-preprod-us-east-1-gree | Namespace: event--3658e3f01cbdae2f84c6520be1bb0a1f7ad3cba8b6652b72e6e4bd4a | Steps: 140 (limit: 100) | Risk: Pod termination message overflow may cause infinite running TaskRuns. Manual cleanup may be required.' {"code.method":"github.com/calculi-corp/dsl-engine-cli/internal/engine/tekton.(*jobTransformer).transformToTektonTask"}
