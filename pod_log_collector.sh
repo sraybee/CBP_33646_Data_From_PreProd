@@ -71,8 +71,8 @@ while IFS= read -r line || [ -n "$line" ]; do
 	fi
 done < "$file"
 
-echo "LogIn to AWS SSO with profile saas-pp-dev to access EKS clusters..."
-aws sso login --profile saas-pp-dev
+#echo "LogIn to AWS SSO with profile saas-pp-dev to access EKS clusters..."
+#aws sso login --profile saas-pp-dev
 
 SEP="============================================================"
 SUBSEP="------------------------------------------------------------"
@@ -120,7 +120,9 @@ while IFS= read -r l || [ -n "$l" ]; do
 		printf '  Core Resources\n'
 		printf '%s\n' "$SUBSEP"
 		show_resources "$kube" "$namespace" pods "$sizefile"
-		# Dump run pod YAML to a file for structural analysis
+		# Dump run pod YAML for structural inspection (containers, Tekton env vars, volume mounts per step).
+		# Note: YAML size is NOT used for etcd size estimation — JSON wc -c above is our approximation.
+		# True etcd Protobuf size requires etcdctl direct cluster access (not available on EKS).
 		run_pod_name=$(KUBECONFIG="$kube" kubectl get pods -n "$namespace" \
 			--no-headers -o custom-columns=NAME:.metadata.name 2>/dev/null \
 			| grep '^run-' | head -1)
