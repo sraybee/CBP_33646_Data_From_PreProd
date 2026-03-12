@@ -120,6 +120,15 @@ while IFS= read -r l || [ -n "$l" ]; do
 		printf '  Core Resources\n'
 		printf '%s\n' "$SUBSEP"
 		show_resources "$kube" "$namespace" pods "$sizefile"
+		# Dump run pod YAML to a file for structural analysis
+		run_pod_name=$(KUBECONFIG="$kube" kubectl get pods -n "$namespace" \
+			--no-headers -o custom-columns=NAME:.metadata.name 2>/dev/null \
+			| grep '^run-' | head -1)
+		if [ -n "$run_pod_name" ]; then
+			pod_yaml_file="$script_dir/pod_yaml_${steps}_steps.yaml"
+			KUBECONFIG="$kube" kubectl get pod "$run_pod_name" -n "$namespace" -o yaml > "$pod_yaml_file" 2>/dev/null
+			printf '  [Run Pod YAML saved => %s]\n\n' "$pod_yaml_file"
+		fi
 		show_resources "$kube" "$namespace" serviceaccounts "$sizefile"
 		show_resources "$kube" "$namespace" configmaps "$sizefile"
 		show_resources "$kube" "$namespace" secrets "$sizefile"
