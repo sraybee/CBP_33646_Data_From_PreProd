@@ -131,6 +131,15 @@ while IFS= read -r l || [ -n "$l" ]; do
 			KUBECONFIG="$kube" kubectl get pod "$run_pod_name" -n "$namespace" -o yaml > "$pod_yaml_file" 2>/dev/null
 			printf '  [Run Pod YAML saved => %s]\n\n' "$pod_yaml_file"
 		fi
+		# Dump TaskRun YAML for error state inspection (conditions, message, etcd error details).
+		run_taskrun_name=$(KUBECONFIG="$kube" kubectl get taskruns -n "$namespace" \
+			--no-headers -o custom-columns=NAME:.metadata.name 2>/dev/null \
+			| grep '^run-' | head -1)
+		if [ -n "$run_taskrun_name" ]; then
+			taskrun_yaml_file="$script_dir/taskrun_yaml_${steps}_steps.yaml"
+			KUBECONFIG="$kube" kubectl get taskrun "$run_taskrun_name" -n "$namespace" -o yaml > "$taskrun_yaml_file" 2>/dev/null
+			printf '  [Run TaskRun YAML saved => %s]\n\n' "$taskrun_yaml_file"
+		fi
 		show_resources "$kube" "$namespace" serviceaccounts "$sizefile"
 		show_resources "$kube" "$namespace" configmaps "$sizefile"
 		show_resources "$kube" "$namespace" secrets "$sizefile"
@@ -154,10 +163,3 @@ while IFS= read -r l || [ -n "$l" ]; do
 		printf '%s\n' "$SEP"
 	fi
 done < "$file"
-
-#if [ -s "$summaryfile" ]; then
-	#printf '\n%s\n' "$FINAL_HDR"
-	#cat "$summaryfile"
-	#printf '%s\n' "$FINAL_FTR"
-#fi
-#rm -f "$summaryfile"

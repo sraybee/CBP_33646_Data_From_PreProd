@@ -1,0 +1,3403 @@
+apiVersion: tekton.dev/v1
+kind: TaskRun
+metadata:
+  annotations:
+    cloudbees.io/aws-ecr-image-count: "2"
+    cloudbees.io/environment: ""
+    cloudbees.io/event-ingestion-timestamp: "2026-03-13T07:59:36.300177258Z"
+    cloudbees.io/has-reusable-workflow: "false"
+    cloudbees.io/has-service: "false"
+    cloudbees.io/job-step-kinds: '{"build":{}}'
+    cloudbees.io/scheduled-engine-timestamp: "2026-03-13T07:59:39.007077765Z"
+    cloudbees.io/standalone-segment: "true"
+    cloudbees.io/task-display-name: build
+    cloudbees.io/trigger-event-timestamp: "2026-03-13T07:59:36.300177258Z"
+    cloudbees.io/trigger-id: DISPATCH|0c0b632d-492b-46a4-af1d-81de7a57611e
+    cloudbees.io/ttl: 1h0m0s
+    cloudbees.io/workflow-file: '"my-workflow.yaml"'
+    cloudbees.io/workflow-source-map: '{"job":[{"r":"https://github.com/sraybee/CBP_31533_Testing/.cloudbees/workflows/my-workflow.yaml@6576c6cf398119febcfdb8949f109a4eeb64fba1","l":10}],"steps":{"s001-0":[{"l":12}],"s002-1":[{"l":15}],"s003-2":[{"l":18}],"s004-3":[{"l":21}],"s005-4":[{"l":24}],"s006-5":[{"l":27}],"s007-6":[{"l":30}],"s008-7":[{"l":33}],"s009-8":[{"l":36}],"s010-9":[{"l":39}],"s011-10":[{"l":42}],"s012-11":[{"l":45}],"s013-12":[{"l":48}],"s014-13":[{"l":51}],"s015-14":[{"l":54}],"s016-15":[{"l":57}],"s017-16":[{"l":60}],"s018-17":[{"l":63}],"s019-18":[{"l":66}],"s020-19":[{"l":69}],"s021-20":[{"l":72}],"s022-21":[{"l":75}],"s023-22":[{"l":78}],"s024-23":[{"l":81}],"s025-24":[{"l":84}],"s026-25":[{"l":87}],"s027-26":[{"l":90}],"s028-27":[{"l":93}],"s029-28":[{"l":96}],"s030-29":[{"l":99}],"s031-30":[{"l":102}],"s032-31":[{"l":105}],"s033-32":[{"l":108}],"s034-33":[{"l":111}],"s035-34":[{"l":114}],"s036-35":[{"l":117}],"s037-36":[{"l":120}],"s038-37":[{"l":123}],"s039-38":[{"l":126}],"s040-39":[{"l":129}],"s041-40":[{"l":132}],"s042-41":[{"l":135}],"s043-42":[{"l":138}],"s044-43":[{"l":141}],"s045-44":[{"l":144}],"s046-45":[{"l":147}],"s047-46":[{"l":150}],"s048-47":[{"l":153}],"s049-48":[{"l":156}],"s050-49":[{"l":159}],"s051-50":[{"l":162}],"s052-51":[{"l":165}],"s053-52":[{"l":168}],"s054-53":[{"l":171}],"s055-54":[{"l":174}],"s056-55":[{"l":177}],"s057-56":[{"l":180}],"s058-57":[{"l":183}],"s059-58":[{"l":186}],"s060-59":[{"l":189}],"s061-60":[{"l":192}],"s062-61":[{"l":195}],"s063-62":[{"l":198}],"s064-63":[{"l":201}],"s065-64":[{"l":204}],"s066-65":[{"l":207}],"s067-66":[{"l":210}],"s068-67":[{"l":213}],"s069-68":[{"l":216}],"s070-69":[{"l":219}],"s071-70":[{"l":222}],"s072-71":[{"l":225}],"s073-72":[{"l":228}],"s074-73":[{"l":231}],"s075-74":[{"l":234}],"s076-75":[{"l":237}],"s077-76":[{"l":240}],"s078-77":[{"l":243}],"s079-78":[{"l":246}],"s080-79":[{"l":249}],"s081-80":[{"l":252}],"s082-81":[{"l":255}],"s083-82":[{"l":258}],"s084-83":[{"l":261}],"s085-84":[{"l":264}],"s086-85":[{"l":267}],"s087-86":[{"l":270}],"s088-87":[{"l":273}],"s089-88":[{"l":276}],"s090-89":[{"l":279}],"s091-90":[{"l":282}],"s092-91":[{"l":285}],"s093-92":[{"l":288}],"s094-93":[{"l":291}],"s095-94":[{"l":294}],"s096-95":[{"l":297}],"s097-96":[{"l":300}],"s098-97":[{"l":303}],"s099-98":[{"l":306}],"s100-99":[{"l":309}],"s101-100":[{"l":312}],"s102-101":[{"l":315}],"s103-102":[{"l":318}],"s104-103":[{"l":321}],"s105-104":[{"l":324}],"s106-105":[{"l":327}],"s107-106":[{"l":330}],"s108-107":[{"l":333}],"s109-108":[{"l":336}],"s110-109":[{"l":339}],"s111-110":[{"l":342}],"s112-111":[{"l":345}],"s113-112":[{"l":348}],"s114-113":[{"l":351}],"s115-114":[{"l":354}],"s116-115":[{"l":357}],"s117-116":[{"l":360}],"s118-117":[{"l":363}],"s119-118":[{"l":366}],"s120-119":[{"l":369}],"s121-120":[{"l":372}],"s122-121":[{"l":375}],"s123-122":[{"l":378}],"s124-123":[{"l":381}],"s125-124":[{"l":384}],"s126-125":[{"l":387}],"s127-126":[{"l":390}],"s128-127":[{"l":393}],"s129-128":[{"l":396}],"s130-129":[{"l":399}],"s131-130":[{"l":402}],"s132-131":[{"l":405}],"s133-132":[{"l":408}],"s134-133":[{"l":411}],"s135-134":[{"l":414}],"s136-135":[{"l":417}],"s137-136":[{"l":420}],"s138-137":[{"l":423}],"s139-138":[{"l":426}],"s140-139":[{"l":429}],"s141-140":[{"l":432}],"s142-141":[{"l":435}],"s143-142":[{"l":438}],"s144-143":[{"l":441}],"s145-144":[{"l":444}],"s146-145":[{"l":447}],"s147-146":[{"l":450}],"s148-147":[{"l":453}],"s149-148":[{"l":456}],"s150-149":[{"l":459}],"s151-150":[{"l":462}],"s152-151":[{"l":465}],"s153-152":[{"l":468}],"s154-153":[{"l":471}],"s155-154":[{"l":474}],"s156-155":[{"l":477}],"s157-156":[{"l":480}],"s158-157":[{"l":483}]}}'
+    pipeline.tekton.dev/release: 898912d
+  creationTimestamp: "2026-03-13T07:59:50Z"
+  finalizers:
+  - taskrun.cloudbees.com/finalizer
+  - taskrun.cloudbees.com/metrics-finalizer
+  generation: 1
+  labels:
+    admission.datadoghq.com/enabled: "false"
+    app.kubernetes.io/managed-by: tekton-pipelines
+    cloudbees.io/component-id: b357456b-1b8c-454a-aa36-51e7a013f142
+    cloudbees.io/event-emitter: "true"
+    cloudbees.io/job: build
+    cloudbees.io/organization: 8509888e-d27f-44fa-46a9-29bc76f5e790
+    cloudbees.io/pipeline-segment: my-workflow
+    cloudbees.io/run-attempt: "1"
+    cloudbees.io/run-id: 13ea2d76-3aa2-4790-ae85-7b5ce5a3d44a
+    cloudbees.io/run-number: "92"
+    cloudbees.io/sha: 6576c6cf398119febcfdb8949f109a4eeb64fba1
+    cloudbees.io/task: build
+    cloudbees.io/trigger-event-type: WORKFLOW_DISPATCH
+    tekton.dev/memberOf: tasks
+    tekton.dev/pipeline: run-dispatch0c0b632d492b-myworkflow-df4dbc1783bbb0e0
+    tekton.dev/pipelineRun: run-dispatch0c0b632d492b-myworkflow-df4dbc1783bbb0e0
+    tekton.dev/pipelineTask: job-build-f10ec3ffef16
+    tekton.dev/task: job-build-aa2accb22e907b7c76517507b0500f178f0e-af11afe625db5791
+  name: run-dispa33c935510a3d0d0a5858b0899465c79-job-build-f10ec3ffef16
+  namespace: event-myworkflowyaml-c4353f40e337742b0a7bbe9add2d1b44bae77b3c30
+  ownerReferences:
+  - apiVersion: tekton.dev/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: PipelineRun
+    name: run-dispatch0c0b632d492b-myworkflow-df4dbc1783bbb0e0
+    uid: eecf840e-958f-4f33-b28f-43c03532ad8e
+  resourceVersion: "318133356"
+  uid: ea472891-5de7-41ce-a142-873055a2fc4d
+spec:
+  podTemplate:
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: cloudbees.io/node-type
+              operator: In
+              values:
+              - user
+    automountServiceAccountToken: false
+    imagePullSecrets:
+    - name: ds-evt-dispatch-0c0b632d-492b-46a4-af1d-81de7a57611-482bdd3e8d7
+    - name: ips-020229604682-dkr-ecr-us-east-1-amazonaws-com-di-dbb93694a11
+    securityContext:
+      fsGroup: 1001
+      seccompProfile:
+        type: RuntimeDefault
+      supplementalGroups:
+      - 1001
+    tolerations:
+    - effect: NoSchedule
+      key: cloudbees.io/node-type
+      operator: Equal
+      value: user
+  serviceAccountName: dispatch
+  taskRef:
+    kind: Task
+    name: job-build-aa2accb22e907b7c76517507b0500f178f0e-af11afe625db5791
+  timeout: 1h0m0s
+  workspaces:
+  - emptyDir:
+      sizeLimit: 10G
+    name: default
+  - configMap:
+      name: evt-dispatch-0c0b632d-492b-46a4-af1d-81de7a57611e-1-b723d9a0d3c
+    name: event
+  - configMap:
+      items:
+      - key: registries.json
+        path: registries.json
+      name: registries-dispatch-0c0b632d-492b-46a4-af1d-81de7a5-c6116464bb3
+    name: registriesworkspace
+  - configMap:
+      items:
+      - key: registries.conf
+        path: registries.conf
+      name: registries-dispatch-0c0b632d-492b-46a4-af1d-81de7a5-c6116464bb3
+    name: etcworkspace
+status:
+  conditions:
+  - lastTransitionTime: null
+    status: "True"
+    type: ReportedTaskPending
+  - lastTransitionTime: "2026-03-13T07:59:54Z"
+    message: Pending
+    reason: Pending
+    status: Unknown
+    type: Succeeded
+  podName: run-dispa33c935510a3d0d0a58f96172489ebe20d4cc9760cc2b1fec98-pod
+  provenance:
+    featureFlags:
+      AwaitSidecarReadiness: true
+      Coschedule: workspaces
+      DisableAffinityAssistant: false
+      DisableCredsInit: false
+      DisableInlineSpec: ""
+      EnableAPIFields: alpha
+      EnableArtifacts: false
+      EnableCELInWhenExpression: false
+      EnableConciseResolverSyntax: false
+      EnableKeepPodOnCancel: false
+      EnableKubernetesSidecar: false
+      EnableParamEnum: false
+      EnableProvenanceInStatus: true
+      EnableStepActions: false
+      EnforceNonfalsifiability: none
+      MaxResultSize: 4096
+      RequireGitSSHSecretKnownHosts: false
+      ResultExtractionMethod: termination-message
+      RunningInEnvWithInjectedSidecars: true
+      SendCloudEventsForRuns: false
+      SetSecurityContext: false
+      VerificationNoMatchPolicy: ignore
+  startTime: "2026-03-13T07:59:52Z"
+  taskSpec:
+    stepTemplate:
+      computeResources:
+        limits:
+          cpu: 2k
+          memory: 12G
+        requests:
+          cpu: 4m
+          memory: 25M
+      securityContext:
+        capabilities:
+          drop:
+          - NET_RAW
+    steps:
+    - command:
+      - /runtime
+      - init
+      - --dir=/cloudbees
+      - --event=/cloudbees/event/event.json
+      - --id-token-file=/cloudbees/idtoken/token
+      - --permissions-file=/cloudbees/secrets/job/permissions
+      - --cluster-token-file=/cloudbees/cluster-token/token
+      - --api-url=https://api.saas-preprod.beescloud.com
+      - --secrets=/cloudbees/secrets/job/secrets.json
+      - --props=/cloudbees/secrets/job/vars.json
+      - --user-steps=/cloudbees/user-steps-list/steps.json
+      - --job-id=build
+      - --job-timeout=3600
+      - --debug=false
+      - --outputs-via-api=true
+      - --trigger-info=WORKFLOW_DISPATCH
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/services/dsl-runtime-cli:latest
+      name: prepare-workspace
+      securityContext:
+        runAsGroup: 1001
+        runAsUser: 1000
+      volumeMounts:
+      - mountPath: /cloudbees/idtoken
+        name: idtoken
+        readOnly: true
+      - mountPath: /cloudbees/cluster-token
+        name: cluster-token
+        readOnly: true
+      - mountPath: /cloudbees/secrets/job
+        name: jobsecrets
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+      - mountPath: /cloudbees/user-steps-list
+        name: user-steps-list
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step0
+      - s001-0
+      - echo "Step 1"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s001-0
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s001-0
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step1
+      - s002-1
+      - echo "Step 2"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s002-1
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s002-1
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step2
+      - s003-2
+      - echo "Step 3"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s003-2
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s003-2
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step3
+      - s004-3
+      - echo "Step 4"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s004-3
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s004-3
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step4
+      - s005-4
+      - echo "Step 5"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s005-4
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s005-4
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step5
+      - s006-5
+      - echo "Step 6"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s006-5
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s006-5
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step6
+      - s007-6
+      - echo "Step 7"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s007-6
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s007-6
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step7
+      - s008-7
+      - echo "Step 8"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s008-7
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s008-7
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step8
+      - s009-8
+      - echo "Step 9"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s009-8
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s009-8
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step9
+      - s010-9
+      - echo "Step 10"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s010-9
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s010-9
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step10
+      - s011-10
+      - echo "Step 11"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s011-10
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s011-10
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step11
+      - s012-11
+      - echo "Step 12"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s012-11
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s012-11
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step12
+      - s013-12
+      - echo "Step 13"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s013-12
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s013-12
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step13
+      - s014-13
+      - echo "Step 14"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s014-13
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s014-13
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step14
+      - s015-14
+      - echo "Step 15"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s015-14
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s015-14
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step15
+      - s016-15
+      - echo "Step 16"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s016-15
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s016-15
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step16
+      - s017-16
+      - echo "Step 17"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s017-16
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s017-16
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step17
+      - s018-17
+      - echo "Step 18"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s018-17
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s018-17
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step18
+      - s019-18
+      - echo "Step 19"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s019-18
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s019-18
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step19
+      - s020-19
+      - echo "Step 20"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s020-19
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s020-19
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step20
+      - s021-20
+      - echo "Step 21"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s021-20
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s021-20
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step21
+      - s022-21
+      - echo "Step 22"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s022-21
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s022-21
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step22
+      - s023-22
+      - echo "Step 23"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s023-22
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s023-22
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step23
+      - s024-23
+      - echo "Step 24"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s024-23
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s024-23
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step24
+      - s025-24
+      - echo "Step 25"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s025-24
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s025-24
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step25
+      - s026-25
+      - echo "Step 26"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s026-25
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s026-25
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step26
+      - s027-26
+      - echo "Step 27"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s027-26
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s027-26
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step27
+      - s028-27
+      - echo "Step 28"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s028-27
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s028-27
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step28
+      - s029-28
+      - echo "Step 29"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s029-28
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s029-28
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step29
+      - s030-29
+      - echo "Step 30"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s030-29
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s030-29
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step30
+      - s031-30
+      - echo "Step 31"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s031-30
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s031-30
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step31
+      - s032-31
+      - echo "Step 32"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s032-31
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s032-31
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step32
+      - s033-32
+      - echo "Step 33"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s033-32
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s033-32
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step33
+      - s034-33
+      - echo "Step 34"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s034-33
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s034-33
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step34
+      - s035-34
+      - echo "Step 35"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s035-34
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s035-34
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step35
+      - s036-35
+      - echo "Step 36"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s036-35
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s036-35
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step36
+      - s037-36
+      - echo "Step 37"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s037-36
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s037-36
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step37
+      - s038-37
+      - echo "Step 38"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s038-37
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s038-37
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step38
+      - s039-38
+      - echo "Step 39"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s039-38
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s039-38
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step39
+      - s040-39
+      - echo "Step 40"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s040-39
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s040-39
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step40
+      - s041-40
+      - echo "Step 41"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s041-40
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s041-40
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step41
+      - s042-41
+      - echo "Step 42"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s042-41
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s042-41
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step42
+      - s043-42
+      - echo "Step 43"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s043-42
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s043-42
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step43
+      - s044-43
+      - echo "Step 44"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s044-43
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s044-43
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step44
+      - s045-44
+      - echo "Step 45"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s045-44
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s045-44
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step45
+      - s046-45
+      - echo "Step 46"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s046-45
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s046-45
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step46
+      - s047-46
+      - echo "Step 47"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s047-46
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s047-46
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step47
+      - s048-47
+      - echo "Step 48"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s048-47
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s048-47
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step48
+      - s049-48
+      - echo "Step 49"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s049-48
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s049-48
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step49
+      - s050-49
+      - echo "Step 50"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s050-49
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s050-49
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step50
+      - s051-50
+      - echo "Step 51"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s051-50
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s051-50
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step51
+      - s052-51
+      - echo "Step 52"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s052-51
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s052-51
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step52
+      - s053-52
+      - echo "Step 53"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s053-52
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s053-52
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step53
+      - s054-53
+      - echo "Step 54"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s054-53
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s054-53
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step54
+      - s055-54
+      - echo "Step 55"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s055-54
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s055-54
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step55
+      - s056-55
+      - echo "Step 56"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s056-55
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s056-55
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step56
+      - s057-56
+      - echo "Step 57"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s057-56
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s057-56
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step57
+      - s058-57
+      - echo "Step 58"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s058-57
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s058-57
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step58
+      - s059-58
+      - echo "Step 59"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s059-58
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s059-58
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step59
+      - s060-59
+      - echo "Step 60"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s060-59
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s060-59
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step60
+      - s061-60
+      - echo "Step 61"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s061-60
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s061-60
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step61
+      - s062-61
+      - echo "Step 62"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s062-61
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s062-61
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step62
+      - s063-62
+      - echo "Step 63"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s063-62
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s063-62
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step63
+      - s064-63
+      - echo "Step 64"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s064-63
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s064-63
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step64
+      - s065-64
+      - echo "Step 65"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s065-64
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s065-64
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step65
+      - s066-65
+      - echo "Step 66"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s066-65
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s066-65
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step66
+      - s067-66
+      - echo "Step 67"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s067-66
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s067-66
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step67
+      - s068-67
+      - echo "Step 68"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s068-67
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s068-67
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step68
+      - s069-68
+      - echo "Step 69"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s069-68
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s069-68
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step69
+      - s070-69
+      - echo "Step 70"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s070-69
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s070-69
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step70
+      - s071-70
+      - echo "Step 71"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s071-70
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s071-70
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step71
+      - s072-71
+      - echo "Step 72"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s072-71
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s072-71
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step72
+      - s073-72
+      - echo "Step 73"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s073-72
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s073-72
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step73
+      - s074-73
+      - echo "Step 74"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s074-73
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s074-73
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step74
+      - s075-74
+      - echo "Step 75"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s075-74
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s075-74
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step75
+      - s076-75
+      - echo "Step 76"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s076-75
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s076-75
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step76
+      - s077-76
+      - echo "Step 77"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s077-76
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s077-76
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step77
+      - s078-77
+      - echo "Step 78"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s078-77
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s078-77
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step78
+      - s079-78
+      - echo "Step 79"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s079-78
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s079-78
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step79
+      - s080-79
+      - echo "Step 80"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s080-79
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s080-79
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step80
+      - s081-80
+      - echo "Step 81"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s081-80
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s081-80
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step81
+      - s082-81
+      - echo "Step 82"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s082-81
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s082-81
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step82
+      - s083-82
+      - echo "Step 83"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s083-82
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s083-82
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step83
+      - s084-83
+      - echo "Step 84"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s084-83
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s084-83
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step84
+      - s085-84
+      - echo "Step 85"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s085-84
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s085-84
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step85
+      - s086-85
+      - echo "Step 86"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s086-85
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s086-85
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step86
+      - s087-86
+      - echo "Step 87"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s087-86
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s087-86
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step87
+      - s088-87
+      - echo "Step 88"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s088-87
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s088-87
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step88
+      - s089-88
+      - echo "Step 89"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s089-88
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s089-88
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step89
+      - s090-89
+      - echo "Step 90"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s090-89
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s090-89
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step90
+      - s091-90
+      - echo "Step 91"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s091-90
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s091-90
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step91
+      - s092-91
+      - echo "Step 92"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s092-91
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s092-91
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step92
+      - s093-92
+      - echo "Step 93"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s093-92
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s093-92
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step93
+      - s094-93
+      - echo "Step 94"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s094-93
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s094-93
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step94
+      - s095-94
+      - echo "Step 95"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s095-94
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s095-94
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step95
+      - s096-95
+      - echo "Step 96"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s096-95
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s096-95
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step96
+      - s097-96
+      - echo "Step 97"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s097-96
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s097-96
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step97
+      - s098-97
+      - echo "Step 98"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s098-97
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s098-97
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step98
+      - s099-98
+      - echo "Step 99"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s099-98
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s099-98
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step99
+      - s100-99
+      - echo "Step 100"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s100-99
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s100-99
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step100
+      - s101-100
+      - echo "Step 101"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s101-100
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s101-100
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step101
+      - s102-101
+      - echo "Step 102"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s102-101
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s102-101
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step102
+      - s103-102
+      - echo "Step 103"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s103-102
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s103-102
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step103
+      - s104-103
+      - echo "Step 104"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s104-103
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s104-103
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step104
+      - s105-104
+      - echo "Step 105"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s105-104
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s105-104
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step105
+      - s106-105
+      - echo "Step 106"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s106-105
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s106-105
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step106
+      - s107-106
+      - echo "Step 107"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s107-106
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s107-106
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step107
+      - s108-107
+      - echo "Step 108"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s108-107
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s108-107
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step108
+      - s109-108
+      - echo "Step 109"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s109-108
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s109-108
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step109
+      - s110-109
+      - echo "Step 110"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s110-109
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s110-109
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step110
+      - s111-110
+      - echo "Step 111"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s111-110
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s111-110
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step111
+      - s112-111
+      - echo "Step 112"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s112-111
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s112-111
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step112
+      - s113-112
+      - echo "Step 113"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s113-112
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s113-112
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step113
+      - s114-113
+      - echo "Step 114"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s114-113
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s114-113
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step114
+      - s115-114
+      - echo "Step 115"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s115-114
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s115-114
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step115
+      - s116-115
+      - echo "Step 116"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s116-115
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s116-115
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step116
+      - s117-116
+      - echo "Step 117"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s117-116
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s117-116
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step117
+      - s118-117
+      - echo "Step 118"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s118-117
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s118-117
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step118
+      - s119-118
+      - echo "Step 119"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s119-118
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s119-118
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step119
+      - s120-119
+      - echo "Step 120"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s120-119
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s120-119
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step120
+      - s121-120
+      - echo "Step 121"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s121-120
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s121-120
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step121
+      - s122-121
+      - echo "Step 122"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s122-121
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s122-121
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step122
+      - s123-122
+      - echo "Step 123"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s123-122
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s123-122
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step123
+      - s124-123
+      - echo "Step 124"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s124-123
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s124-123
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step124
+      - s125-124
+      - echo "Step 125"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s125-124
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s125-124
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step125
+      - s126-125
+      - echo "Step 126"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s126-125
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s126-125
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step126
+      - s127-126
+      - echo "Step 127"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s127-126
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s127-126
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step127
+      - s128-127
+      - echo "Step 128"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s128-127
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s128-127
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step128
+      - s129-128
+      - echo "Step 129"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s129-128
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s129-128
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step129
+      - s130-129
+      - echo "Step 130"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s130-129
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s130-129
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step130
+      - s131-130
+      - echo "Step 131"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s131-130
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s131-130
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step131
+      - s132-131
+      - echo "Step 132"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s132-131
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s132-131
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step132
+      - s133-132
+      - echo "Step 133"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s133-132
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s133-132
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step133
+      - s134-133
+      - echo "Step 134"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s134-133
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s134-133
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step134
+      - s135-134
+      - echo "Step 135"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s135-134
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s135-134
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step135
+      - s136-135
+      - echo "Step 136"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s136-135
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s136-135
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step136
+      - s137-136
+      - echo "Step 137"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s137-136
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s137-136
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step137
+      - s138-137
+      - echo "Step 138"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s138-137
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s138-137
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step138
+      - s139-138
+      - echo "Step 139"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s139-138
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s139-138
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step139
+      - s140-139
+      - echo "Step 140"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s140-139
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s140-139
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step140
+      - s141-140
+      - echo "Step 141"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s141-140
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s141-140
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step141
+      - s142-141
+      - echo "Step 142"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s142-141
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s142-141
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step142
+      - s143-142
+      - echo "Step 143"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s143-142
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s143-142
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step143
+      - s144-143
+      - echo "Step 144"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s144-143
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s144-143
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step144
+      - s145-144
+      - echo "Step 145"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s145-144
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s145-144
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step145
+      - s146-145
+      - echo "Step 146"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s146-145
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s146-145
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step146
+      - s147-146
+      - echo "Step 147"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s147-146
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s147-146
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step147
+      - s148-147
+      - echo "Step 148"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s148-147
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s148-147
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step148
+      - s149-148
+      - echo "Step 149"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s149-148
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s149-148
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step149
+      - s150-149
+      - echo "Step 150"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s150-149
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s150-149
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step150
+      - s151-150
+      - echo "Step 151"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s151-150
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s151-150
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step151
+      - s152-151
+      - echo "Step 152"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s152-151
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s152-151
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step152
+      - s153-152
+      - echo "Step 153"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s153-152
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s153-152
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step153
+      - s154-153
+      - echo "Step 154"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s154-153
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s154-153
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step154
+      - s155-154
+      - echo "Step 155"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s155-154
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s155-154
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step155
+      - s156-155
+      - echo "Step 156"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s156-155
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s156-155
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step156
+      - s157-156
+      - echo "Step 157"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s157-156
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s157-156
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /cloudbees/runtime
+      - --dir=/cloudbees
+      - run
+      - step157
+      - s158-157
+      - echo "Step 158"
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/docker-hub/library/alpine:3.17
+      imagePullPolicy: Always
+      name: s158-157
+      onError: continue
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+        subPath: steps/s158-157
+      - mountPath: /cloudbees/protected/bin
+        name: protected-bin-volume
+        readOnly: true
+      workingDir: /cloudbees
+    - command:
+      - /runtime
+      - finalize
+      - --dir=/cloudbees
+      - --debug=false
+      computeResources: {}
+      image: 020229604682.dkr.ecr.us-east-1.amazonaws.com/services/dsl-runtime-cli:latest
+      name: finalize
+      securityContext:
+        runAsGroup: 1001
+        runAsUser: 1000
+      volumeMounts:
+      - mountPath: /cloudbees/isolated-scope
+        name: isolated-scope
+      - mountPath: /cloudbees/cluster-token
+        name: cluster-token
+        readOnly: true
+      - mountPath: /cloudbees/idtoken
+        name: idtoken
+        readOnly: true
+    volumes:
+    - name: idtoken
+      secret:
+        secretName: idtoken-dispatch-0c0b632d-492b-46a4-af1d-81de7a5761-7b05f2b2f49
+    - name: cluster-token
+      projected:
+        defaultMode: 272
+        sources:
+        - serviceAccountToken:
+            audience: cloudbees.io
+            expirationSeconds: 4201
+            path: token
+    - emptyDir: {}
+      name: isolated-scope
+    - emptyDir: {}
+      name: protected-bin-volume
+    - name: jobsecrets
+      secret:
+        secretName: run-dispatch0c0b6-myworkflow-jobbuildf10ec3ffe-b1afec5b21ee883f
+    - configMap:
+        name: run-dispatch0-myworkflo-jobbuildf-config-796bb621568fac54
+      name: user-steps-list
+    workspaces:
+    - mountPath: /cloudbees
+      name: default
+    - mountPath: /cloudbees/event
+      name: event
+    - mountPath: /cloudbees/config
+      name: registriesworkspace
+    - mountPath: /etc/containers
+      name: etcworkspace
