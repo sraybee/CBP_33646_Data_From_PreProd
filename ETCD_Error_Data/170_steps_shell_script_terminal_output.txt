@@ -1,0 +1,101 @@
+sray@sray-MacBook-Pro CBP_33646_Data_From_PreProd %  sh pod_log_collector.sh
+Cluster: tekton-preprod-us-west-2-gree, Namespace: event-myworkflowyaml-460ab19e2d97075999d83371c3cf14afa26539e039, Steps: 170
+
+Checking namespaces in EKS clusters (per-line):
+
+============================================================
+  Cluster   : tekton-preprod-us-west-2-gree
+  Namespace : event-myworkflowyaml-460ab19e2d97075999d83371c3cf14afa26539e039
+============================================================
+  Status    : ALIVE
+============================================================
+
+------------------------------------------------------------
+  Core Resources
+------------------------------------------------------------
+NAME                    READY   STATUS      RESTARTS   AGE
+pods/dispatch-dispatch-pod 0/1 Completed 0 74s
+Size: 23807 bytes
+
+
+  [Run TaskRun YAML saved => /Users/sray/CBP_31533/CBP_33646_Data_From_PreProd/taskrun_yaml_170_steps.yaml]
+
+NAME       SECRETS   AGE
+serviceaccounts/default 0 92s
+Size: 344 bytes
+
+serviceaccounts/dispatch 0 97s
+Size: 663 bytes
+
+
+NAME                                                              DATA   AGE
+configmaps/dispatch 1 105s
+Size: 1539 bytes
+
+configmaps/evt-dispatch-97d9faec-0d5f-4b40-beed-46f940f51a7d-d-26d70ffef3e 1 102s
+Size: 1980 bytes
+
+configmaps/kube-root-ca.crt 1 114s
+Size: 1825 bytes
+
+configmaps/registries-dispatch-97d9faec-0d5f-4b40-beed-46f940f-3f0ca1f2ca1 2 110s
+Size: 1721 bytes
+
+configmaps/run-dispatch9-myworkflo-jobbuildf-config-ad4c1e190543ab9d 1 114s
+Size: 2990 bytes
+
+
+NAME                                                              TYPE                             DATA   AGE
+secrets/ds-evt-dispatch-97d9faec-0d5f-4b40-beed-46f940f51a7-d98312a3acf kubernetes.io/dockerconfigjson 1 2m2s
+Size: 975 bytes
+
+secrets/idtoken Opaque 1 2m15s
+Size: 3481 bytes
+
+secrets/idtoken-dispatch-97d9faec-0d5f-4b40-beed-46f940f51a-80873d3beb5 Opaque 1 2m12s
+Size: 3699 bytes
+
+secrets/pridt-dispatch-97d9faec-0d5f-4b40-beed-46f940f51a7d-fbbe2317df8 Opaque 1 2m15s
+Size: 3738 bytes
+
+secrets/regcreds kubernetes.io/dockerconfigjson 1 2m27s
+Size: 758 bytes
+
+secrets/run-dispatch97d9f-myworkflow-jobbuildf10ec3ffe-c9616929ad0d7235 Opaque 3 2m24s
+Size: 1066 bytes
+
+
+NAME                                   POD-SELECTOR                              AGE
+networkpolicies/egress-deny-all-but-internet-and-dns cloudbees.io/meta-pipeline notin (true) 2m41s
+Size: 2581 bytes
+
+
+------------------------------------------------------------
+  Tekton Resources
+------------------------------------------------------------
+NAME                                                              AGE
+tasks/job-build-6c08fbffcaa6721fbe0e556cc3b0452b7617-56ab6d15ad9b2df7 2m43s
+Size: 190790 bytes
+
+
+NAME                                                              SUCCEEDED   REASON              STARTTIME   COMPLETIONTIME
+taskruns/dispatch-dispatch True Succeeded 3m1s 2m51s
+Size: 16109 bytes
+
+taskruns/run-disp067f11020d1c0b519992767b6af2071e-job-build-f10ec3ffef16 False PodCreationFailed 2m56s 2m54s
+Size: 219068 bytes
+
+
+NAME                                                   SUCCEEDED   REASON      STARTTIME   COMPLETIONTIME
+pipelineruns/dispatch True Succeeded 3m16s 3m6s
+Size: 21126 bytes
+
+pipelineruns/run-dispatch97d9faec0d5f-myworkflow-1fb575d39c34e029 False Failed 3m12s 3m10s
+Size: 10721 bytes
+
+
+
+============================================================
+  namespace_k8s_resources_total_size : 508981 bytes  ( 0.4854 MB )  [Steps: 170]
+============================================================
+sray@sray-MacBook-Pro CBP_33646_Data_From_PreProd %
