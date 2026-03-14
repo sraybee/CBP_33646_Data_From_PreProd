@@ -151,7 +151,7 @@ while IFS= read -r l || [ -n "$l" ]; do
 		show_resources "$kube" "$namespace" taskruns "$sizefile"
 		show_resources "$kube" "$namespace" pipelineruns "$sizefile"
 		total_bytes=$(awk '{s+=$1} END{print s+0}' "$sizefile")
-		total_mb=$(awk "BEGIN{printf \"%.4f\", $total_bytes/1048576}")
+		total_mb=$(awk 'BEGIN{printf "%.4f", '"$total_bytes"'/1048576}')
 		printf '\n%s\n' "$SEP"
 		printf '  namespace_k8s_resources_total_size : %s bytes  ( %s MB )  [Steps: %s]\n' "$total_bytes" "$total_mb" "$steps"
 		printf '%s\n' "$SEP"
